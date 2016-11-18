@@ -1,0 +1,45 @@
+/*
+ * pali.cpp
+ *
+ *  Created on: Nov 8, 2016
+ *      Author: Gabe
+ */
+ #include <iostream>
+ #include <string>
+
+ using namespace std;
+
+bool pali (string s){
+	bool check;
+    int len= s.length();
+		for(int i = 0; i != len-1; i++){
+			if(s.at(i) != s.at(len-1-i)){
+				check = true;
+				
+			}
+		}
+		if(check){
+			return false;
+		}
+		else{
+			return true;
+		}
+}
+
+ int main(){
+    string word;
+    string set[5];
+    int palicount =0;
+    cout << "Enter 5 words" << endl;
+    for(int i =0; i<5; i++){
+        cin>>word;
+        set[i]=word;
+    }
+    for(int n=0; n<5; n++){
+        if(pali(set[n])){
+            palicount++;}
+        
+    }
+    cout<< "The amount of palindromes in this set is "<<palicount;
+  return 0;
+ }
